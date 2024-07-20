@@ -17,8 +17,8 @@ class MealDetailScreen extends StatelessWidget {
       child: Text(
         text,
         style: Theme.of(context).textTheme.subtitle1.copyWith(
-              fontSize: 18,
-              fontFamily: 'Hummington', // Change the fontFamily here
+              fontSize: 20,
+              fontFamily: 'Hummington',
             ),
       ),
     );
@@ -28,11 +28,14 @@ class MealDetailScreen extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
-        border: Border.all(color: Color(0xFF50070D)),
+        border: Border.all(
+          color: Color(0xFF50070D),
+          width: 2.0,
+        ),
         borderRadius: BorderRadius.circular(10),
       ),
       margin: const EdgeInsets.all(10),
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(0),
       height: 300,
       width: 300,
       child: child,
@@ -51,11 +54,14 @@ class MealDetailScreen extends StatelessWidget {
         child: Column(
           children: <Widget>[
             SizedBox(
-              height: 300,
-              width: double.infinity,
-              child: Image.network(
-                selectedMeal.imageUrl,
-                fit: BoxFit.cover,
+              child: Hero(
+                tag: 'hero-tag-${selectedMeal.imageUrl}', // Unique tag
+                child: Image.network(
+                  selectedMeal.imageUrl,
+                  fit: BoxFit.cover,
+                  height: 300,
+                  width: double.infinity,
+                ),
               ),
             ),
             buildSectionTitle(context, 'Ingredients'),
@@ -78,7 +84,7 @@ class MealDetailScreen extends StatelessWidget {
                   children: [
                     ListTile(
                       leading: CircleAvatar(
-                        child: Text('# ${(index + 1)}'),
+                        child: Text('${(index + 1)}'),
                       ),
                       title: Text(
                         selectedMeal.steps[index],

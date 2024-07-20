@@ -25,3 +25,6 @@ flutter:
     - family: VAGRounded
       fonts:
         - asset: assets/fonts/VAGRoundedNext-Regular.ttf
+
+flutter_riverpod: ^2.3.2
+transparent_image: ^2.0.0

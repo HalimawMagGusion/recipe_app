@@ -20,6 +20,19 @@ class CategoryItem extends StatelessWidget {
     );
   }
 
+  Widget buildSectionTitle(BuildContext context, String text) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      child: Text(
+        text,
+        style: Theme.of(context).textTheme.subtitle1.copyWith(
+              fontSize: 18,
+              fontFamily: 'Hummington',
+            ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return InkWell(

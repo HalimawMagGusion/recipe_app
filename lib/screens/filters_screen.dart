@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 import '../widgets/main_drawer.dart';
@@ -10,7 +8,8 @@ class FiltersScreen extends StatefulWidget {
   final Function saveFilters;
   final Map<String, bool> currentFilters;
 
-  const FiltersScreen(this.currentFilters, this.saveFilters, {Key key}) : super(key: key);
+  const FiltersScreen(this.currentFilters, this.saveFilters, {Key key})
+      : super(key: key);
 
   @override
   _FiltersScreenState createState() => _FiltersScreenState();
@@ -73,8 +72,12 @@ class _FiltersScreenState extends State<FiltersScreen> {
           Container(
             padding: const EdgeInsets.all(20),
             child: Text(
-              'Adjust your meal selection.',
-              style: Theme.of(context).textTheme.titleLarge,
+              'Adjust your meal selection',
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyText1
+                  ?.copyWith(fontSize: 18 // Replace with your desired font size
+                      ),
             ),
           ),
           Expanded(
