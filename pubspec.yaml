@@ -18,3 +18,10 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  fonts:
+    - family: Hummington
+      fonts:
+        - asset: assets/fonts/nintendoP_Humming-E_002pr.otf
+    - family: VAGRounded
+      fonts:
+        - asset: assets/fonts/VAGRoundedNext-Regular.ttf

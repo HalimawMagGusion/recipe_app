@@ -14,7 +14,7 @@ class MainDrawer extends StatelessWidget {
       title: Text(
         title,
         style: const TextStyle(
-          fontFamily: 'RobotoCondensed',
+          fontFamily: 'Hummington',
           fontSize: 24,
           fontWeight: FontWeight.bold,
         ),
@@ -33,8 +33,8 @@ class MainDrawer extends StatelessWidget {
             width: double.infinity,
             padding: const EdgeInsets.all(20),
             alignment: Alignment.centerLeft,
-            color: Color(0xFF50070D),
-            child: Text(
+            color: const Color(0xFF50070D),
+            child: const Text(
               'Cooking Up!',
               style: TextStyle(
                   fontWeight: FontWeight.w900,

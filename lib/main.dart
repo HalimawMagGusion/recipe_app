@@ -70,7 +70,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Complete Guide',
+      title: 'Recipe_app',
       theme: ThemeData(
         primarySwatch: MaterialColor(0xFFfdc195, {
           50: Color(0xFFfef7f2),
@@ -84,19 +84,29 @@ class _MyAppState extends State<MyApp> {
           800: Color(0xFFf57346),
           900: Color(0xFFf45530),
         }),
+        appBarTheme: AppBarTheme(
+          titleTextStyle: TextStyle(
+            fontFamily: 'Hummington',
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Color(0xFF50070D),
+          ),
+        ),
         accentColor: Color(0xFF50070D),
         canvasColor: Color(0xFFFCE6CF),
-        fontFamily: 'Raleway',
+        fontFamily: 'Hummington',
         textTheme: ThemeData.light().textTheme.copyWith(
             bodyText1: TextStyle(
               color: Color(0xFF50070D),
+              fontFamily: 'Hummington',
             ),
             bodyText2: TextStyle(
               color: Color(0xFF50070D),
+              fontFamily: 'Hummington',
             ),
             subtitle1: TextStyle(
-              fontSize: 20,
-              fontFamily: 'RobotoCondensed',
+              fontSize: 14,
+              fontFamily: 'Hummington',
               fontWeight: FontWeight.bold,
             )),
       ),

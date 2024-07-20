@@ -16,7 +16,10 @@ class MealDetailScreen extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 10),
       child: Text(
         text,
-        style: Theme.of(context).textTheme.titleLarge,
+        style: Theme.of(context).textTheme.subtitle1.copyWith(
+              fontSize: 18,
+              fontFamily: 'Hummington', // Change the fontFamily here
+            ),
       ),
     );
   }
@@ -25,12 +28,12 @@ class MealDetailScreen extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
-        border: Border.all(color: Colors.grey),
+        border: Border.all(color: Color(0xFF50070D)),
         borderRadius: BorderRadius.circular(10),
       ),
       margin: const EdgeInsets.all(10),
       padding: const EdgeInsets.all(10),
-      height: 150,
+      height: 300,
       width: 300,
       child: child,
     );
@@ -58,14 +61,12 @@ class MealDetailScreen extends StatelessWidget {
             buildSectionTitle(context, 'Ingredients'),
             buildContainer(
               ListView.builder(
-                itemBuilder: (ctx, index) => Card(
-                  color: Theme.of(context).colorScheme.secondary,
-                  child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 5,
-                        horizontal: 10,
-                      ),
-                      child: Text(selectedMeal.ingredients[index])),
+                itemBuilder: (ctx, index) => Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 10,
+                    horizontal: 25,
+                  ),
+                  child: Text(selectedMeal.ingredients[index]),
                 ),
                 itemCount: selectedMeal.ingredients.length,
               ),

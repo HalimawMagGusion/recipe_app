@@ -27,7 +27,7 @@ class _TabsScreenState extends State<TabsScreen> {
       },
       {
         'page': FavoritesScreen(widget.favoriteMeals),
-        'title': 'Your Favorite',
+        'title': 'Your Favorites',
       },
     ];
     super.initState();
@@ -50,7 +50,7 @@ class _TabsScreenState extends State<TabsScreen> {
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectPage,
         backgroundColor: Theme.of(context).primaryColor,
-        unselectedItemColor: Colors.white,
+        unselectedItemColor: Color.fromARGB(110, 80, 7, 13),
         selectedItemColor: Theme.of(context).colorScheme.secondary,
         currentIndex: _selectedPageIndex,
         items: [
