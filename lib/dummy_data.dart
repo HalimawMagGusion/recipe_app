@@ -172,7 +172,7 @@ const DUMMY_MEALS = [
   ),
   Meal(
     id: 'm5',
-    categories: ['c2'],
+    categories: ['c2', 'c9'],
     title: 'Oatmeal with Fresh Fruit',
     affordability: Affordability.Affordable,
     complexity: Complexity.Simple,
@@ -532,7 +532,7 @@ const DUMMY_MEALS = [
   ),
   Meal(
     id: 'm18',
-    categories: ['c6'],
+    categories: ['c6', 'c4', 'c10'],
     title: 'Halo-Halo',
     affordability: Affordability.Affordable,
     complexity: Complexity.Simple,
@@ -807,7 +807,7 @@ const DUMMY_MEALS = [
   ),
   Meal(
     id: 'm28',
-    categories: ['c10'],
+    categories: ['c10', 'c9'],
     title: 'Yogurt Parfait',
     affordability: Affordability.Affordable,
     complexity: Complexity.Simple,
@@ -862,7 +862,7 @@ const DUMMY_MEALS = [
   ),
   Meal(
     id: 'm30',
-    categories: ['c10'],
+    categories: ['c10', 'c9'],
     title: 'Caprese Salad',
     affordability: Affordability.Affordable,
     complexity: Complexity.Simple,
