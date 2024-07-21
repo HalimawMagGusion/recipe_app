@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
+// Importing the Category and Meal models
 import './models/category.dart';
 import './models/meal.dart';
 
+// Dummy data for categories used in the app
 const DUMMY_CATEGORIES = [
   Category(
-    id: 'c1',
-    title: 'Asian',
-    color: Color(0xFFD52801),
+    id: 'c1', // Unique identifier for the category
+    title: 'Asian', // Display title for the category
+    color: Color(0xFFD52801), // Background color for the category
   ),
   Category(
     id: 'c2',
@@ -56,35 +58,38 @@ const DUMMY_CATEGORIES = [
   ),
 ];
 
+// Dummy data for meals used in the app
 const DUMMY_MEALS = [
   Meal(
-    id: 'm1',
-    categories: ['c1'],
-    title: 'Korean BBQ Beef',
-    affordability: Affordability.Affordable,
-    complexity: Complexity.Simple,
+    id: 'm1', // Unique identifier for the meal
+    categories: ['c1'], // List of category IDs this meal belongs to
+    title: 'Korean BBQ Beef', // Title of the meal
+    affordability: Affordability.Affordable, // Affordability level of the meal
+    complexity: Complexity.Simple, // Complexity level of the meal
     imageUrl:
-        'https://www.allrecipes.com/thmb/G_UXncCchkMVeELX8DQMEwJOdHI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/246172-Easy-Bulgogi-ddmfs-104-4x3-1-c0ddcab340474175a5d1c96bc2edabbc.jpg',
-    duration: 30,
+        'https://www.allrecipes.com/thmb/G_UXncCchkMVeELX8DQMEwJOdHI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/246172-Easy-Bulgogi-ddmfs-104-4x3-1-c0ddcab340474175a5d1c96bc2edabbc.jpg', // URL for meal image
+    duration: 30, // Duration to prepare the meal in minutes
     ingredients: [
-      'Beef (sliced thinly)',
-      'Soy sauce',
-      'Brown sugar',
-      'Sesame oil',
-      'Garlic',
-      'Ginger',
-      'Green onions',
-      'Sesame seeds',
+      // List of ingredients required for the meal
+      '1 pound(450 grams) Beef (sliced thinly)',
+      '1/4 cup (60 ml) Soy sauce',
+      '2 tablespoons Brown sugar',
+      '2 tablespoons Sesame oil',
+      '4 cloves, minced Garlic',
+      '1 tablespoon, minced Ginger',
+      '4, chopped Green onions',
+      '1 tablespoon Sesame seeds',
     ],
     steps: [
+      // List of steps to prepare the meal
       'Marinate beef in soy sauce, brown sugar, sesame oil, garlic, and ginger.',
       'Grill or pan-fry beef until cooked.',
       'Garnish with green onions and sesame seeds.',
     ],
-    isGlutenFree: false,
-    isVegan: false,
-    isVegetarian: false,
-    isLactoseFree: true,
+    isGlutenFree: false, // Indicates if the meal is gluten-free
+    isVegan: false, // Indicates if the meal is vegan
+    isVegetarian: false, // Indicates if the meal is vegetarian
+    isLactoseFree: true, // Indicates if the meal is lactose-free
   ),
   Meal(
     id: 'm2',
@@ -96,13 +101,13 @@ const DUMMY_MEALS = [
         'https://www.cooking-therapy.com/wp-content/uploads/2022/05/Vietnamese-Spring-Rolls-Goi-Cuon-2.jpg',
     duration: 20,
     ingredients: [
-      'Rice paper',
-      'Shrimp or tofu',
-      'Rice noodles',
-      'Lettuce',
-      'Mint',
-      'Cilantro',
-      'Peanut sauce',
+      '12 sheets Rice paper',
+      '12 large shrimp (cooked and sliced in half) or 1 block tofu (cut into strips)',
+      '4 ounces (115 grams), cooked Rice noodles',
+      '1 head Lettuce',
+      '1/4 cup, chopped Mint',
+      '1/4 cup, chopped Cilantro',
+      '1/2 cup (120 ml) Peanut sauce',
     ],
     steps: [
       'Soak rice paper in water until pliable.',
@@ -124,14 +129,14 @@ const DUMMY_MEALS = [
         'https://mamalovestocook.com/wp-content/uploads/2020/05/boiled-dumplings.jpg',
     duration: 60,
     ingredients: [
-      'Dumpling wrappers',
-      'Ground pork or chicken',
-      'Cabbage',
-      'Ginger',
-      'Garlic',
-      'Soy sauce',
-      'Green onions',
-      'Sesame oil',
+      '1 pack Dumpling wrappers',
+      '1 pound (450 grams) Ground pork or chicken',
+      '1 cup, finely chopped Cabbage',
+      '1 tablespoon, minced Ginger',
+      '3 cloves, minced Garlic',
+      '2 tablespoons Soy sauce',
+      '3 finely chopped Green onions',
+      '1 tablespoon Sesame oil',
     ],
     steps: [
       'Mix ground meat with finely chopped cabbage, ginger, garlic, soy sauce, green onions, and sesame oil.',
@@ -153,11 +158,11 @@ const DUMMY_MEALS = [
         'https://kristineskitchenblog.com/wp-content/uploads/2023/02/breakfast-burrito-recipe-16.jpg',
     duration: 15,
     ingredients: [
-      'Flour tortillas',
-      'Eggs',
-      'Cheese',
-      'Cooked bacon or sausage',
-      'Salsa',
+      '4 large Flour tortillas',
+      '6 Eggs',
+      '1 cup (shredded) Cheese',
+      '8 slices Cooked bacon or 4 sausages (crumbled) sausage',
+      '1 cup Salsa',
     ],
     steps: [
       'Scramble eggs and cook until set.',
@@ -180,10 +185,10 @@ const DUMMY_MEALS = [
         'https://nenaswellnesscorner.com/wp-content/uploads/2023/07/Oatmeal-with-fruit-n1.jpg',
     duration: 10,
     ingredients: [
-      'Oats',
-      'Milk (or water)',
-      'Fresh fruit (e.g., berries, banana)',
-      'Honey or maple syrup',
+      '1 cup Oats',
+      '2 cups Milk (or water)',
+      '1 cup Fresh fruit (e.g., berries, banana slices)',
+      '2 tablespoons Honey or maple syrup',
     ],
     steps: [
       'Cook oats with milk or water according to package instructions.',
@@ -204,13 +209,13 @@ const DUMMY_MEALS = [
         'https://brooklynfarmgirl.com/wp-content/uploads/2016/02/Cheesy-Vegetable-Omelette_10-683x1024.jpg',
     duration: 15,
     ingredients: [
-      'Eggs',
-      'Bell peppers',
-      'Spinach',
-      'Onions',
-      'Cheese (optional)',
-      'Salt',
-      'Pepper',
+      '4 Eggs',
+      '1/2 cup (chopped) Bell peppers',
+      '1 cup (fresh, chopped) Spinach',
+      '1/4 cup (chopped) Onions',
+      '1/2 cup (shredded) Cheese (optional)',
+      '1/4 teaspoon Salt',
+      '1/4 teaspoon Pepper',
     ],
     steps: [
       'Beat eggs and season with salt and pepper.',
@@ -233,10 +238,10 @@ const DUMMY_MEALS = [
         'https://getinspiredeveryday.com/wp-content/uploads/2023/03/Mango-Smoothie-Get-Inspired-Everyday-8.jpg',
     duration: 10,
     ingredients: [
-      'Mangoes',
-      'Yogurt',
-      'Honey',
-      'Ice cubes',
+      '2 (peeled and diced) Mangoes',
+      '1 cup Yogurt',
+      '2 tablespoons Honey',
+      '1 cup Ice cubes',
     ],
     steps: [
       'Peel and chop mangoes.',
@@ -258,10 +263,10 @@ const DUMMY_MEALS = [
         'https://www.allrecipes.com/thmb/Hqro0FNdnDEwDjrEoxhMfKdWfOY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/21667-easy-iced-coffee-ddmfs-4x3-0093-7becf3932bd64ed7b594d46c02d0889f.jpg',
     duration: 5,
     ingredients: [
-      'Coffee',
-      'Ice cubes',
-      'Milk',
-      'Sugar',
+      '2 cups (brewed) Coffee',
+      '1 cup Ice cubes',
+      '1/2 cup Milk',
+      '2 tablespoons Sugar',
     ],
     steps: [
       'Brew coffee and let it cool.',
@@ -284,10 +289,10 @@ const DUMMY_MEALS = [
         'https://www.jocooks.com/wp-content/uploads/2023/05/lemonade-1-28.jpg',
     duration: 10,
     ingredients: [
-      'Lemons',
-      'Sugar',
-      'Water',
-      'Ice cubes',
+      '6 Lemons',
+      '1 cup Sugar',
+      '6 cups Water',
+      '2 cups Ice cubes',
     ],
     steps: [
       'Squeeze lemons to get juice.',
@@ -310,12 +315,12 @@ const DUMMY_MEALS = [
         'https://www.rachelcooks.com/wp-content/uploads/2023/01/Chocolate-Lava-Cakes019-web-square.jpg',
     duration: 30,
     ingredients: [
-      'Dark chocolate',
-      'Butter',
-      'Eggs',
-      'Sugar',
-      'Flour',
-      'Vanilla extract',
+      '½ cup butter (113g)',
+      '6 ounces chocolate chopped (168g)',
+      '2 large eggs',
+      '¼ cup granulated sugar (50g)',
+      '2 tablespoons all-purpose flour',
+      '2 tablespoons Vanilla extract',
     ],
     steps: [
       'Melt chocolate and butter together.',
@@ -338,9 +343,9 @@ const DUMMY_MEALS = [
         'https://www.mybakingaddiction.com/wp-content/uploads/2009/06/close-up-lemon-sorbet-hero.jpg',
     duration: 120,
     ingredients: [
-      'Lemon juice',
-      'Sugar',
-      'Water',
+      '1 ½ cups lemon juice ',
+      '1 cup plus 3 tablespoons sugar',
+      '1 ¼ cups of water',
     ],
     steps: [
       'Dissolve sugar in water to make a simple syrup.',
@@ -362,12 +367,12 @@ const DUMMY_MEALS = [
         'https://www.culinaryhill.com/wp-content/uploads/2021/01/Tiramisu-Culinary-Hill-1200x800-1.jpg',
     duration: 240,
     ingredients: [
-      'Ladyfingers',
-      'Mascarpone cheese',
-      'Coffee',
-      'Eggs',
-      'Sugar',
-      'Cocoa powder',
+      '24 to 30 pieces ladyfingers(about 1 package)',
+      '16 ounces mascarpone cheese (500 grams)',
+      '1 ½ cups coffee (strong brewed espresso, cooled)',
+      '4 large eggs,separated',
+      '½ cup sugar (100 grams)',
+      '2 tablespoons Cocoa powder',
     ],
     steps: [
       'Dip ladyfingers in coffee and layer in a dish.',
@@ -389,13 +394,13 @@ const DUMMY_MEALS = [
     imageUrl: 'https://i.ndtvimg.com/i/2018-02/rolls_620x330_41518089610.jpg',
     duration: 60,
     ingredients: [
-      'Sushi rice',
-      'Nori (seaweed)',
-      'Fresh fish (e.g., tuna or salmon)',
-      'Avocado',
-      'Cucumber',
-      'Soy sauce',
-      'Wasabi',
+      '2 cups Sushi rice',
+      '6 sheets Nori (seaweed)',
+      '1/2 pound Fresh fish (e.g., tuna or salmon)',
+      '1 (sliced) Avocado',
+      '1 (sliced into thin strips) Cucumber',
+      '1/4 cup (for dipping) Soy sauce',
+      '1 tablespoon Wasabi',
     ],
     steps: [
       'Cook and season sushi rice.',
@@ -420,15 +425,15 @@ const DUMMY_MEALS = [
         'https://media1.sacurrent.com/sacurrent/imager/28-essential-ramen-and-pho-spots-in-san-antonio-to-get-your-noodle-fix/u/zoom/27145779/kimura.png?cb=1642780090',
     duration: 60,
     ingredients: [
-      'Ramen noodles',
-      'Pork belly',
-      'Soy sauce',
-      'Miso paste',
-      'Garlic',
-      'Ginger',
-      'Green onions',
-      'Eggs',
-      'Nori',
+      '4 servings Ramen noodles',
+      '1/2 pound (sliced thin) Pork belly',
+      '1/4 cup Soy sauce',
+      '2 tablespoons Miso paste',
+      '4 cloves (minced) Garlic',
+      '1 tablespoon (minced) Ginger',
+      '4 (sliced) Green onions',
+      '4 (soft-boiled) Eggs',
+      '4 sheets (cut into strips) Nori',
     ],
     steps: [
       'Cook pork belly and set aside.',
@@ -452,14 +457,14 @@ const DUMMY_MEALS = [
         'https://feastandflight.com/wp-content/uploads/2020/01/IMG_8288-ltr-scaled.jpg',
     duration: 45,
     ingredients: [
-      'Rice',
-      'Beef (or tofu)',
-      'Spinach',
-      'Carrots',
-      'Bean sprouts',
-      'Egg',
-      'Gochujang (Korean chili paste)',
-      'Soy sauce',
+      '4 cups Rice',
+      '1 pound (sliced thin) Beef (or 1 block tofu)',
+      '2 cups Spinach',
+      '2 (julienned) Carrots',
+      '2 cups (blanched) Bean sprouts',
+      '4 (fried or poached) Egg',
+      '1/4 cup Gochujang (Korean chili paste)',
+      '2 tablespoons Soy sauce',
     ],
     steps: [
       'Cook rice and set aside.',
@@ -483,14 +488,14 @@ const DUMMY_MEALS = [
         'https://www.allrecipes.com/thmb/91kDp_3WYGHzsmMkXnDP5s9mBGI=/0x512/filters:no_upscale():max_bytes(150000):strip_icc()/35151-traditional-filipino-lumpia-ddmfs-hero-1x2-0745-d25195def74049598ca7cfa057f9d77e.jpg',
     duration: 60,
     ingredients: [
-      'Ground pork',
-      'Carrots',
-      'Green beans',
-      'Garlic',
-      'Onions',
-      'Soy sauce',
-      'Spring roll wrappers',
-      'Oil for frying',
+      '1 pound Ground pork',
+      '1 cup (finely chopped) Carrots',
+      '1 cup (finely chopped) Green beans',
+      '4 cloves (minced) Garlic',
+      '1 (finely chopped) Onions',
+      '1/4 cup Soy sauce',
+      '1 pack Spring roll wrappers',
+      '2 cups Oil for frying',
     ],
     steps: [
       'Sauté garlic and onions.',
@@ -515,10 +520,10 @@ const DUMMY_MEALS = [
         'https://i0.wp.com/plantbased-passport.com/wp-content/uploads/vegan-filipino-pancit-bihon-10.jpg?resize=720%2C900&ssl=1',
     duration: 30,
     ingredients: [
-      'Rice noodles',
-      'Chicken',
-      'Vegetables',
-      'Soy sauce',
+      '8 ounces Rice noodles',
+      '1 pound (sliced) Chicken',
+      '4 cups Vegetables',
+      '1/4 cup Soy sauce',
     ],
     steps: [
       'Cook chicken and vegetables.',
@@ -540,12 +545,12 @@ const DUMMY_MEALS = [
         'https://assets.bonappetit.com/photos/60e46c6701084801b06de2a3/1:1/w_2560%2Cc_limit/Halo-Halo-Recipe-2021.jpg',
     duration: 15,
     ingredients: [
-      'Crushed ice',
-      'Sweet beans',
-      'Jellies',
-      'Fruits',
-      'Leche flan',
-      'Ube ice cream',
+      '2 cups Crushed ice',
+      '1/2 cup Sweet beans',
+      '1/2 cup Jellies',
+      '1 cup Fruits',
+      '1/2 cup (cubed) Leche flan',
+      '1/2 cup Ube ice cream',
     ],
     steps: [
       'Layer ingredients in a glass.',
@@ -567,11 +572,11 @@ const DUMMY_MEALS = [
         'https://images.prismic.io/eataly-us/ed3fcec7-7994-426d-a5e4-a24be5a95afd_pizza-recipe-main.jpg',
     duration: 30,
     ingredients: [
-      'Pizza dough',
-      'Tomato sauce',
-      'Mozzarella',
-      'Basil',
-      'Olive oil',
+      '1 Pizza dough',
+      '1/2 cup Tomato sauce',
+      '8 ounces (sliced) Mozzarella',
+      '1/4 cup Basil',
+      '2 tablespoons Olive oil',
     ],
     steps: [
       'Prepare dough.',
@@ -586,7 +591,7 @@ const DUMMY_MEALS = [
   ),
   Meal(
     id: 'm20',
-    categories: ['c7'],
+    categories: ['c7', 'c6'],
     title: 'Spaghetti Carbonara',
     affordability: Affordability.Affordable,
     complexity: Complexity.Simple,
@@ -594,11 +599,11 @@ const DUMMY_MEALS = [
         'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Espaguetis_carbonara.jpg/800px-Espaguetis_carbonara.jpg',
     duration: 20,
     ingredients: [
-      'Spaghetti',
-      'Eggs',
-      'Pecorino Romano',
-      'Guanciale',
-      'Black Pepper',
+      '1 pound Spaghetti',
+      '4 large Eggs',
+      '1 cup (grated) Pecorino Romano',
+      '8 ounces (cubed) Guanciale',
+      '1 teaspoon (ground) Black Pepper',
     ],
     steps: [
       'Cook spaghetti.',
@@ -622,16 +627,16 @@ const DUMMY_MEALS = [
     duration: 40,
     ingredients: [
       '6 boneless skinless chicken breast',
-      'flour',
-      'eggs',
-      'cream',
+      '1 cupflour',
+      '3 eggs',
+      '1/4 cup cream',
       'Salt & black pepper',
-      'minced flat leaf parsley',
-      'breadcrumbs',
-      'parmesan cheese',
-      'olive oil',
-      'Marinara Sauce',
-      'milk mozzarella',
+      '2 tablespoons minced flat leaf parsley',
+      '1 1/2 cups breadcrumbs',
+      '1/2 cup (grated) parmesan cheese',
+      '1/4 cup olive oil',
+      '2 cups Marinara Sauce',
+      '1 1/2 cups (sliced) milk mozzarella',
     ],
     steps: [
       'Bread the chicken with flour, egg, and breadcrumbs mixed with Parmesan.',
@@ -654,11 +659,11 @@ const DUMMY_MEALS = [
         'https://www.eatingwell.com/thmb/0gjj7z0ii3PXmAcb7ubZK2RZbTI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/cucumber-sandwich-7949991-3x2-f111dce9bcf44c788803c46a0c31f330.jpg',
     duration: 10,
     ingredients: [
-      'Whole grain bread',
-      'Hummus',
-      'Cucumber slices',
-      'Salt',
-      'Pepper',
+      '8 slices Whole grain bread',
+      '1 cup Hummus',
+      '1 large cucumber (sliced thin)',
+      '1/4 teaspoon Salt',
+      '1/4 teaspoon Pepper',
     ],
     steps: [
       'Spread hummus on bread slices.',
@@ -681,11 +686,11 @@ const DUMMY_MEALS = [
         'https://www.allrecipes.com/thmb/7OjjcmRQC8Sb236VtRX5YljlaIQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/4535439-564adcef998c47bebfcb6d9c5aa2a3df.jpg',
     duration: 10,
     ingredients: [
-      'Spinach',
-      'Strawberries',
-      'Feta cheese',
-      'Walnuts',
-      'Balsamic vinaigrette',
+      '6 cups Spinach',
+      '2 cups (sliced) Strawberries',
+      '1/2 cup (crumbled) Feta cheese',
+      '1/2 cup (toasted, chopped) Walnuts',
+      '1/4 cup Balsamic vinaigrette',
     ],
     steps: [
       'Toss spinach and sliced strawberries in a bowl.',
@@ -707,14 +712,14 @@ const DUMMY_MEALS = [
         'https://therecipecritic.com/wp-content/uploads/2022/10/tomatobasilsoup-4-750x1000.jpg',
     duration: 30,
     ingredients: [
-      'Tomatoes',
-      'Onion',
-      'Garlic',
-      'Basil',
-      'Olive oil',
-      'Vegetable broth',
-      'Salt',
-      'Pepper',
+      '4 cups (diced) Tomatoes',
+      '1 medium (chopped) Onion',
+      '4 cloves (minced) Garlic',
+      '1/4 cup (fresh, chopped) Basil',
+      '2 tablespoons Olive oil',
+      '4 cups Vegetable broth',
+      '1 teaspoon Salt',
+      '1/2 teaspoon Pepper',
     ],
     steps: [
       'Sauté onions and garlic in olive oil.',
@@ -737,11 +742,11 @@ const DUMMY_MEALS = [
         'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F9416780.jpg&q=60&c=sc&poi=auto&orient=true&h=512',
     duration: 10,
     ingredients: [
-      'Cheddar cheese',
-      'bread',
-      'fresh parsley',
-      'basil',
-      'butter',
+      '8 ounces (sliced) Cheddar cheese',
+      '8 slices bread',
+      '2 tablespoons (chopped) fresh parsley',
+      '2 tablespoons (chopped) basil',
+      '4 tablespoons butter',
     ],
     steps: [
       'Butter bread.',
@@ -763,11 +768,11 @@ const DUMMY_MEALS = [
         'https://natashaskitchen.com/wp-content/uploads/2019/01/Caesar-Salad-Recipe-3.jpg',
     duration: 15,
     ingredients: [
-      'Romaine lettuce',
-      'Caesar dressing',
-      'Croutons',
-      'Parmesan cheese',
-      'Mayonnaise',
+      '1 large head (chopped) Romaine lettuce',
+      '1/2 cup Caesar dressing',
+      '1 cup Croutons',
+      '1/2 cup (grated) Parmesan cheese',
+      '1/4 cup Mayonnaise',
     ],
     steps: [
       'Chop lettuce.',
@@ -789,10 +794,10 @@ const DUMMY_MEALS = [
         'https://natashaskitchen.com/wp-content/uploads/2020/08/Vegetable-Stir-Fry-2.jpg',
     duration: 15,
     ingredients: [
-      'Mixed vegetables',
-      'Soy sauce',
-      'Garlic',
-      'Olive oil',
+      '4 cups  Mixed vegetables',
+      '1/4 cup Soy sauce',
+      '4 cloves (minced) Garlic',
+      '2 tablespoons Olive oil',
     ],
     steps: [
       'Heat oil.',
@@ -815,10 +820,10 @@ const DUMMY_MEALS = [
         'https://feelgoodfoodie.net/wp-content/uploads/2021/05/fruit-and-yogurt-parfait-09.jpg',
     duration: 10,
     ingredients: [
-      'Greek yogurt',
-      'Granola',
-      'Mixed berries',
-      'Honey',
+      '2 cups Greek yogurt',
+      '1 cup Granola',
+      '1 cup Mixed berries',
+      '2 tablespoons Honey',
     ],
     steps: [
       'Layer yogurt, granola, mixed berries in a glass.',
@@ -840,13 +845,13 @@ const DUMMY_MEALS = [
         'https://www.seriouseats.com/thmb/4q2pHbYsYhMXVHEdISs3u7IMTTo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20210524-Watermelon-Feta-Mint-Salad-liz-voltz-seriouseats-4-cce131458da64fd2a5e64a4bf77def90.jpg',
     duration: 15,
     ingredients: [
-      'Watermelon',
-      'Feta cheese',
-      'Mint leaves',
-      'Olive oil',
-      'Lime juice',
-      'Salt',
-      'Pepper',
+      '4 cups (cubed) Watermelon',
+      '1 cup (crumbled) Feta cheese',
+      '1/4 cup (chopped) Mint leaves',
+      '2 tablespoons Olive oil',
+      '1 tablespoonsLime juice',
+      '1/4 teaspoon Salt',
+      '1/4 teaspoon Pepper',
     ],
     steps: [
       'Cut watermelon into cubes.',
@@ -870,13 +875,13 @@ const DUMMY_MEALS = [
         'https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2019/07/Caprese-Salad-main-1.jpg',
     duration: 10,
     ingredients: [
-      'Tomatoes',
-      'Fresh mozzarella',
-      'Basil',
-      'Olive oil',
-      'Balsamic glaze',
-      'Salt',
-      'Pepper',
+      '4 (sliced) Tomatoes',
+      '8 ounces (sliced) Fresh mozzarella',
+      '1/4 cup (fresh leaves) Basil',
+      '2 tablespoons Olive oil',
+      '2 tablespoons Balsamic glaze',
+      '1/4 teaspoon Salt',
+      '1/4 teaspoon Pepper',
     ],
     steps: [
       'Slice tomatoes and mozzarella.',

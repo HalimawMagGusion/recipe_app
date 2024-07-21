@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-import './dummy_data.dart';
-import './screens/tabs_screen.dart';
-import './screens/meal_detail_screen.dart';
-import './screens/category_meals_screen.dart';
-import './screens/filters_screen.dart';
-import './screens/categories_screen.dart';
-import './models/meal.dart';
+import './dummy_data.dart'; // Importing dummy data used in the app
+import './screens/tabs_screen.dart'; // Importing the tabs screen
+import './screens/meal_detail_screen.dart'; // Importing the meal detail screen
+import './screens/category_meals_screen.dart'; // Importing the category meals screen
+import './screens/filters_screen.dart'; // Importing the filters screen
+import './screens/categories_screen.dart'; // Importing the categories screen
+import './models/meal.dart'; // Importing the Meal model
 
-void main() => runApp(MyApp());
+void main() => runApp(MyApp()); // Entry point of the application
 
 class MyApp extends StatefulWidget {
   @override
@@ -16,19 +16,26 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  // Default filter settings
   Map<String, bool> _filters = {
     'gluten': false,
     'lactose': false,
     'vegan': false,
     'vegetarian': false,
   };
+
+  // List of meals available based on the filters
   List<Meal> _availableMeals = DUMMY_MEALS;
+
+  // List of favorite meals
   final List<Meal> _favoriteMeals = [];
 
+  // Method to set the filters and update the available meals accordingly
   void _setFilters(Map<String, bool> filterData) {
     setState(() {
       _filters = filterData;
 
+      // Filtering the meals based on the selected filters
       _availableMeals = DUMMY_MEALS.where((meal) {
         if (_filters['gluten'] == true && !meal.isGlutenFree) {
           return false;
@@ -47,6 +54,7 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  // Method to toggle the favorite status of a meal
   void _toggleFavorite(String mealId) {
     final existingIndex =
         _favoriteMeals.indexWhere((meal) => meal.id == mealId);
@@ -63,6 +71,7 @@ class _MyAppState extends State<MyApp> {
     }
   }
 
+  // Method to check if a meal is favorite
   bool _isMealFavorite(String id) {
     return _favoriteMeals.any((meal) => meal.id == id);
   }
@@ -70,7 +79,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Recipe_app',
+      title: 'Recipe_app', // Title of the app
       theme: ThemeData(
         primarySwatch: MaterialColor(0xFFfdc195, {
           50: Color(0xFFfef7f2),
@@ -83,7 +92,7 @@ class _MyAppState extends State<MyApp> {
           700: Color(0xFFf78c52),
           800: Color(0xFFf57346),
           900: Color(0xFFf45530),
-        }),
+        }), // Custom primary color swatch
         appBarTheme: AppBarTheme(
           titleTextStyle: TextStyle(
             fontFamily: 'Hummington',
@@ -92,9 +101,9 @@ class _MyAppState extends State<MyApp> {
             color: Color(0xFF50070D),
           ),
         ),
-        accentColor: Color(0xFF50070D),
-        canvasColor: Color(0xFFFCE6CF),
-        fontFamily: 'Hummington',
+        accentColor: Color(0xFF50070D), // Accent color for the app
+        canvasColor: Color(0xFFFCE6CF), // Background color for the app
+        fontFamily: 'Hummington', // Default font for the app
         textTheme: ThemeData.light().textTheme.copyWith(
             bodyText1: TextStyle(
               color: Color(0xFF50070D),
@@ -110,22 +119,24 @@ class _MyAppState extends State<MyApp> {
               fontWeight: FontWeight.bold,
             )),
       ),
-      initialRoute: '/',
+      initialRoute: '/', // Initial route of the app
       routes: {
-        '/': (ctx) => TabsScreen(_favoriteMeals),
-        CategoryMealsScreen.routeName: (ctx) =>
-            CategoryMealsScreen(_availableMeals),
-        MealDetailScreen.routeName: (ctx) =>
-            MealDetailScreen(_toggleFavorite, _isMealFavorite),
-        FiltersScreen.routeName: (ctx) => FiltersScreen(_filters, _setFilters),
+        '/': (ctx) => TabsScreen(_favoriteMeals), // Route for the tabs screen
+        CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(
+            _availableMeals), // Route for the category meals screen
+        MealDetailScreen.routeName: (ctx) => MealDetailScreen(_toggleFavorite,
+            _isMealFavorite), // Route for the meal detail screen
+        FiltersScreen.routeName: (ctx) => FiltersScreen(
+            _filters, _setFilters), // Route for the filters screen
       },
       onGenerateRoute: (settings) {
-        print(settings.arguments);
-        return null; // Add route handling if needed
+        print(settings.arguments); // Print the route settings arguments
+        return null;
       },
       onUnknownRoute: (settings) {
         return MaterialPageRoute(
-          builder: (ctx) => CategoriesScreen(),
+          builder: (ctx) =>
+              CategoriesScreen(), // Fallback route if an unknown route is accessed
         );
       },
     );

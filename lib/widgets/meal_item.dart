@@ -21,38 +21,35 @@ class MealItem extends StatelessWidget {
     @required this.duration,
   }) : super(key: key);
 
+  // Returns a string representing the complexity of the meal
   String get complexityText {
     switch (complexity) {
       case Complexity.Simple:
         return 'Simple';
-        break;
       case Complexity.Challenging:
         return 'Challenging';
-        break;
       case Complexity.Hard:
         return 'Hard';
-        break;
       default:
         return 'Unknown';
     }
   }
 
+  // Returns a string representing the affordability of the meal
   String get affordabilityText {
     switch (affordability) {
       case Affordability.Affordable:
         return 'Affordable';
-        break;
       case Affordability.Pricey:
         return 'Pricey';
-        break;
       case Affordability.Luxurious:
         return 'Expensive';
-        break;
       default:
         return 'Unknown';
     }
   }
 
+  // Navigates to the MealDetailScreen when a meal item is tapped
   void selectMeal(BuildContext context) {
     Navigator.of(context)
         .pushNamed(
@@ -61,7 +58,7 @@ class MealItem extends StatelessWidget {
     )
         .then((result) {
       if (result != null) {
-        // removeItem(result);
+        // Optional: handle the result (e.g., remove item from favorites)
       }
     });
   }
@@ -69,22 +66,23 @@ class MealItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => selectMeal(context),
+      onTap: () => selectMeal(context), // Navigate to meal details on tap
       child: Card(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius:
+              BorderRadius.circular(15), // Rounded corners for the card
         ),
-        elevation: 5,
-        margin: const EdgeInsets.all(20),
-        color: Color.fromARGB(
-            255, 248, 234, 220), // Replace with your desired background color
+        elevation: 5, // Shadow effect for the card
+        margin: const EdgeInsets.all(20), // Margin around the card
+        color:
+            Color.fromARGB(255, 248, 234, 220), // Background color of the card
         child: Column(
           children: <Widget>[
             Stack(
               children: <Widget>[
                 Hero(
                   tag:
-                      'hero-tag-$imageUrl', // Use a unique tag for the hero transition
+                      'hero-tag-$imageUrl', // Unique tag for the hero transition
                   child: ClipRRect(
                     borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(15),
@@ -92,9 +90,9 @@ class MealItem extends StatelessWidget {
                     ),
                     child: Image.network(
                       imageUrl,
-                      height: 250,
-                      width: double.infinity,
-                      fit: BoxFit.cover,
+                      height: 250, // Height of the image
+                      width: double.infinity, // Full width of the card
+                      fit: BoxFit.cover, // Cover the entire space
                     ),
                   ),
                 ),
@@ -102,13 +100,12 @@ class MealItem extends StatelessWidget {
                   bottom: 0,
                   right: 0,
                   child: Container(
-                    width: 500,
+                    width: 500, // Width of the gradient container
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: [
-                          Colors.transparent, // Start color: transparent
-                          Color.fromARGB(
-                              207, 33, 33, 33) // End color: your desired color
+                          Colors.transparent, // Gradient Start Color
+                          Color.fromARGB(207, 33, 33, 33) // Gradient End Color
                         ],
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
@@ -122,15 +119,15 @@ class MealItem extends StatelessWidget {
                       alignment: Alignment.center,
                       child: Padding(
                         padding: const EdgeInsets.only(
-                            left: 125), // Add horizontal padding for the text
+                            left: 125), // Horizontal padding for the text
                         child: Text(
                           title,
                           style: const TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
+                            fontSize: 18, // Font size for the title
+                            color: Colors.white, // Color of the title text
                           ),
                           softWrap: true,
-                          overflow: TextOverflow.fade,
+                          overflow: TextOverflow.fade, // Text overflow handling
                         ),
                       ),
                     ),
@@ -139,7 +136,7 @@ class MealItem extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20), // Padding around the info row
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
@@ -147,36 +144,36 @@ class MealItem extends StatelessWidget {
                     children: <Widget>[
                       const Icon(
                         Icons.schedule,
-                        color: Color(0xFF50070D),
+                        color: Color(0xFF50070D), // Icon color
                       ),
                       const SizedBox(
-                        width: 6,
+                        width: 6, // Space between icon and text
                       ),
-                      Text('$duration min'),
+                      Text('$duration min'), // Display duration
                     ],
                   ),
                   Row(
                     children: <Widget>[
                       const Icon(
                         Icons.work,
-                        color: Color(0xFF50070D),
+                        color: Color(0xFF50070D), // Icon color
                       ),
                       const SizedBox(
-                        width: 6,
+                        width: 6, // Space between icon and text
                       ),
-                      Text(complexityText),
+                      Text(complexityText), // Display complexity
                     ],
                   ),
                   Row(
                     children: <Widget>[
                       const Icon(
                         Icons.attach_money,
-                        color: Color(0xFF50070D),
+                        color: Color(0xFF50070D), // Icon color
                       ),
                       const SizedBox(
-                        width: 0,
+                        width: 0, // Space between icon and text
                       ),
-                      Text(affordabilityText),
+                      Text(affordabilityText), // Display affordability
                     ],
                   ),
                 ],
