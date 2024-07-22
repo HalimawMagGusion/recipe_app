@@ -517,7 +517,7 @@ const DUMMY_MEALS = [
     affordability: Affordability.Affordable,
     complexity: Complexity.Simple,
     imageUrl:
-        'https://i0.wp.com/plantbased-passport.com/wp-content/uploads/vegan-filipino-pancit-bihon-10.jpg?resize=720%2C900&ssl=1',
+        'https://whisperofyum.com/wp-content/uploads/2022/03/pancit-canton.jpg',
     duration: 30,
     ingredients: [
       '8 ounces Rice noodles',
