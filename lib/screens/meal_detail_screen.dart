@@ -27,7 +27,7 @@ class MealDetailScreen extends StatelessWidget {
   }
 
   // Helper method to build a container with decoration
-  Widget buildContainer(Widget child) {
+  Widget buildContainer(BuildContext context, Widget child) {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white, // Background color of the container
@@ -37,10 +37,11 @@ class MealDetailScreen extends StatelessWidget {
         ),
         borderRadius: BorderRadius.circular(10), // Rounded corners
       ),
-      margin: const EdgeInsets.all(10),
+      margin: const EdgeInsets.only(top: 0, bottom: 30, left: 50, right: 50),
       padding: const EdgeInsets.all(0),
-      height: 300, // Fixed height of the container
-      width: 300, // Fixed width of the container
+      height:
+          MediaQuery.of(context).size.height * 0.3, // Adjust height as needed
+      width: double.infinity, // Full width of the container
       child: child, // Child widget to be displayed inside the container
     );
   }
@@ -75,36 +76,44 @@ class MealDetailScreen extends StatelessWidget {
             buildSectionTitle(context,
                 'Ingredients'), // Building section title for ingredients
             buildContainer(
-              ListView.builder(
-                itemBuilder: (ctx, index) => Padding(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 10,
-                    horizontal: 25,
+              context,
+              Scrollbar(
+                isAlwaysShown: true, // Always show the scrollbar
+                child: ListView.builder(
+                  itemBuilder: (ctx, index) => Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 10,
+                      horizontal: 25,
+                    ),
+                    child: Text(selectedMeal
+                        .ingredients[index]), // Displaying each ingredient
                   ),
-                  child: Text(selectedMeal
-                      .ingredients[index]), // Displaying each ingredient
+                  itemCount: selectedMeal.ingredients.length,
                 ),
-                itemCount: selectedMeal.ingredients.length,
               ),
             ),
             buildSectionTitle(
                 context, 'Steps'), // Building section title for steps
             buildContainer(
-              ListView.builder(
-                itemBuilder: (ctx, index) => Column(
-                  children: [
-                    ListTile(
-                      leading: CircleAvatar(
-                        child: Text('${(index + 1)}'), // Step number
+              context,
+              Scrollbar(
+                isAlwaysShown: true, // Always show the scrollbar
+                child: ListView.builder(
+                  itemBuilder: (ctx, index) => Column(
+                    children: [
+                      ListTile(
+                        leading: CircleAvatar(
+                          child: Text('${(index + 1)}'), // Step number
+                        ),
+                        title: Text(
+                          selectedMeal.steps[index], // Displaying each step
+                        ),
                       ),
-                      title: Text(
-                        selectedMeal.steps[index], // Displaying each step
-                      ),
-                    ),
-                    const Divider() // Divider between steps
-                  ],
+                      const Divider() // Divider between steps
+                    ],
+                  ),
+                  itemCount: selectedMeal.steps.length,
                 ),
-                itemCount: selectedMeal.steps.length,
               ),
             ),
           ],
