@@ -99,40 +99,45 @@ class MealItem extends StatelessWidget {
                 Positioned(
                   bottom: 0,
                   right: 0,
-                  child: Container(
-                    width: 500, // Width of the gradient container
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          Colors.transparent, // Gradient Start Color
-                          Color.fromARGB(207, 33, 33, 33) // Gradient End Color
-                        ],
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
+                  left: 0, // Ensure the gradient spans the full width
+                  child: FractionallySizedBox(
+                    widthFactor: 1, // Full width
+                    child: Container(
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            Colors.transparent, // Gradient Start Color
+                            Color.fromARGB(
+                                207, 33, 33, 33) // Gradient End Color
+                          ],
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                        ),
                       ),
-                    ),
-                    padding: const EdgeInsets.only(
-                      top: 50,
-                      bottom: 10,
-                    ),
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Padding(
-                        padding: const EdgeInsets.only(
-                            left: 125), // Horizontal padding for the text
-                        child: Text(
-                          title,
-                          style: const TextStyle(
-                            fontSize: 18, // Font size for the title
-                            color: Colors.white, // Color of the title text
+                      padding: const EdgeInsets.only(
+                        top: 50,
+                        bottom: 10,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                              left: 0), // Horizontal padding for the text
+                          child: Text(
+                            title,
+                            style: const TextStyle(
+                              fontSize: 18, // Font size for the title
+                              color: Colors.white, // Color of the title text
+                            ),
+                            softWrap: true,
+                            overflow:
+                                TextOverflow.fade, // Text overflow handling
                           ),
-                          softWrap: true,
-                          overflow: TextOverflow.fade, // Text overflow handling
                         ),
                       ),
                     ),
                   ),
-                )
+                ),
               ],
             ),
             Padding(
