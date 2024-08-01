@@ -39,9 +39,9 @@ These features collectively provide a robust and user-friendly experience for ma
 
 ## Members
 
-Cabanig, Precious S.
-Tiongson, Jay Ann D.
-Valler, Efraym John C.
+Cabanig, Precious S. - 
+Tiongson, Jay Ann D. - 
+Valler, Efraym John C. - 
 
 ## Built With
 
